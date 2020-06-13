@@ -11,11 +11,16 @@ angular.module('LunchCheck', [])
     $scope.message = "";
     $scope.check = function () {
       var item =$scope.input.split(",");
-      if (item.length < 4) {
+
+      if (item.length > 1 && item.length <=3) {
         $scope.message = "Enjoy!";
       }
-      else {
+      else if (item.length > 3) {
+
         $scope.message = "Too much!";
+      }
+      else {
+        $scope.message = "please enter data first";
       }
 
   };
